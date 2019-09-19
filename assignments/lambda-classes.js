@@ -87,6 +87,9 @@ class Student extends Person {
         if(this.grade > 70) {
             return `Congrats, you graduated!`
         }
+        else {
+            return `Back to the drawing board.`
+        }
     }
 }
 
@@ -156,7 +159,7 @@ const student2 = new Student({
 
 const pm1 = new ProjectManagers({
     name: 'Donald',
-    age: 28,
+    age: 33,
     location: 'United States',
     specialty: 'React',
     favLanguage: 'machine',
