@@ -56,7 +56,7 @@ class Instructor extends Person {
         return `Today we are learning about ${subject}`;
     }
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}.`
+        return `${student.name} receives a perfect score in ${subject}.`
     }
     adjustGrade(student) {
         let min = 1;
@@ -65,6 +65,8 @@ class Instructor extends Person {
         return student.grade;
     }
 }
+
+
 
 class Student extends Person {
     constructor(learn) {
@@ -106,6 +108,8 @@ class ProjectManagers extends Instructor {
         return `${this.name} debugs ${student.name}'s code on ${subject}.`
     }
 }
+
+
 
 const me = new Person({
     name: 'Mike',
@@ -239,3 +243,12 @@ const mage = new Humanoid({
     console.log(archer.greet());
     console.log(mage.takeDamage());
     console.log(swordsman.destroy());
+
+    console.log(me.name);
+    console.log(mom.speak());
+    console.log(teacher1.specialty);
+    console.log(teacher2.grade(student1, 'Biology'));
+    console.log(student1.previousBackground);
+    console.log(student2.sprintChallenge('Javascript'));
+    console.log(pm1.gradClassName);
+    console.log(pm2.standUp('group'));
