@@ -45,6 +45,18 @@ class Person {
     }
 }
 
+const me = new Person({
+    name: 'Mike',
+    age: 33,
+    location: 'Fountain, MI'
+})
+
+const mom = new Person({
+    name: 'Kelly',
+    age: 52,
+    location: 'North Carolina'
+})
+
 class Instructor extends Person {
     constructor(teach) {
         super(teach);
@@ -59,6 +71,24 @@ class Instructor extends Person {
         return `${student.name} receives a perfect score on ${subject}.`
     }
 }
+
+const teacher1 = new Instructor({
+    name: 'Mr. Spangler',
+    age: 77,
+    location: 'Scottville, MI',
+    specialty: 'math',
+    favLanguage: 'mathematical syntax',
+    catchPhrase: 'Common core sucks.'
+})
+
+const teacher2 = new Instructor({
+    name: 'Mrs. Bongard',
+    age: 67,
+    location: 'Whitehall, MI',
+    specialty: 'English',
+    favLanguage: 'Latin',
+    catchPhrase: 'My son is Maynard Keenan.'
+})
 
 class Student extends Person {
     constructor(learn) {
@@ -78,6 +108,24 @@ class Student extends Person {
     }
 }
 
+const student1 = new Student({
+    name: 'James',
+    age: 48,
+    location: 'Ludington, MI',
+    previousBackground: 'lumber industry',
+    className: 'WEB24',
+    favSubjects: 'Math, Science, Philosophy'
+})
+
+const student2 = new Student({
+    name: 'Brennan',
+    age: 23,
+    location: 'Detroit, MI',
+    previousBackground: 'unemployed',
+    className: 'DS8',
+    favSubjects: 'entrepreneurship'
+})
+
 class ProjectManagers extends Instructor {
     constructor(manage) {
         super(manage);
@@ -91,6 +139,30 @@ class ProjectManagers extends Instructor {
         return `${this.name} debugs ${student.name}'s code on ${subject}.`
     }
 }
+
+const pm1 = new ProjectManagers({
+    name: 'Donald',
+    age: 28,
+    location: 'United States',
+    specialty: 'React',
+    favLanguage: 'machine',
+    catchPhrase: 'Do your homework!',
+    gradClassName: 'WEB1',
+    favInstructor: 'Brit Hemming'
+})
+
+const pm2 = new ProjectManagers({
+    name: 'Bernard',
+    age: 26,
+    location: 'United States',
+    specialty: 'JavaScript',
+    favLanguage: 'C++',
+    catchPhrase: 'Teamwork makes the dreamwork!',
+    gradClassName: 'WEB4',
+    favInstructor: 'Brit'
+})
+
+
 
 const mage = new Humanoid({
     createdAt: new Date(),
