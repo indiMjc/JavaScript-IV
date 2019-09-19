@@ -45,8 +45,6 @@ class Person {
     }
 }
 
-
-
 class Instructor extends Person {
     constructor(teach) {
         super(teach);
@@ -60,9 +58,13 @@ class Instructor extends Person {
     grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}.`
     }
+    adjustGrade(student) {
+        let min = 1;
+        let max = 100;
+        student.grade = Math.random() * (max-min) + min;
+        return student.grade;
+    }
 }
-
-
 
 class Student extends Person {
     constructor(learn) {
@@ -70,6 +72,7 @@ class Student extends Person {
         this.previousBackground = learn.previousBackground;
         this.className = learn.className;
         this.favSubjects = learn.favSubjects;
+        this.grade = learn.grade;
     }
     listSubjects() {
         return `${this.favSubjects}`
@@ -79,6 +82,11 @@ class Student extends Person {
     }
     sprintChallenge(subject) {
         return `${this.name} has begun their sprint challenge on ${subject}.`
+    }
+    graduate() {
+        if(this.grade > 70) {
+            return `Congrats, you graduated!`
+        }
     }
 }
 
@@ -132,7 +140,8 @@ const student1 = new Student({
     location: 'Ludington, MI',
     previousBackground: 'lumber industry',
     className: 'WEB24',
-    favSubjects: 'Math, Science, Philosophy'
+    favSubjects: 'Math, Science, Philosophy',
+    grade: 95
 })
 
 const student2 = new Student({
@@ -141,7 +150,8 @@ const student2 = new Student({
     location: 'Detroit, MI',
     previousBackground: 'unemployed',
     className: 'DS8',
-    favSubjects: 'entrepreneurship'
+    favSubjects: 'entrepreneurship',
+    grade: 68
 })
 
 const pm1 = new ProjectManagers({
